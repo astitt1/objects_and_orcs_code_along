@@ -51,3 +51,35 @@
 //     console.log(movies[i].title);
 // }
 
+// Combine objects, arrays, and functions
+
+// const foo = {
+//     arr: [1,2,3],
+//     obj: {
+//         prop: 'object property'
+//     },
+//     doSomthing: () => {
+//         console.log("I did something!")
+//     }
+// }
+
+// console.log(foo.arr[0]); //1
+// console.log(foo.obj.prop) //'object property'
+// foo.doSomthing();
+
+//AN array of arrays
+
+const foo = [
+    [1, 2, 3],
+    ["4", "5", "6"],
+    [7, 8, 9],
+    ()=>{
+        console.log("I am a function inside an array")
+    }
+]
+
+console.log(foo[0]) //[]
+console.log(foo[0][1]) //2
+
+//Storing functions in an array
+console.log(foo[3]());
