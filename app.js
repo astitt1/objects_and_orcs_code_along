@@ -30,17 +30,16 @@
 
 // #1 OBJ within OBJ
 
-
-// const movies = [ 
-//     { 
-//         title: "Tokyo Story" 
-//     },  
-//     { 
-//         title: "Paul Blart: Mall Cop" 
-//     }, 
-//     { 
-//         title: "L'Avventura" 
-//     } 
+// const movies = [
+//     {
+//         title: "Tokyo Story"
+//     },
+//     {
+//         title: "Paul Blart: Mall Cop"
+//     },
+//     {
+//         title: "L'Avventura"
+//     }
 // ];
 
 // console.log(movies[0].title) //object
@@ -69,17 +68,62 @@
 
 //AN array of arrays
 
-const foo = [
-    [1, 2, 3],
-    ["4", "5", "6"],
-    [7, 8, 9],
-    ()=>{
-        console.log("I am a function inside an array")
+// const foo = [
+//     [1, 2, 3],
+//     ["4", "5", "6"],
+//     [7, 8, 9],
+//     ()=>{
+//         console.log("I am a function inside an array")
+//     }
+// ]
+
+// console.log(foo[0]) //[]
+// console.log(foo[0][1]) //2
+
+// //Storing functions in an array
+// console.log(foo[3]());
+
+
+
+//CREATING A CLASS
+
+class Character {
+    constructor (name, age, eyes, hair, lovesCats = true, lovesDogs) {
+        this.legs = 2;
+        this.arms = 2;
+        this.name = name;
+        this.age = age;
+        this.eyes = eyes,
+        this.hair = hair;
+        this.lovesCats = lovesCats;
+        this.lovesDogs = lovesDogs || true;
     }
-]
 
-console.log(foo[0]) //[]
-console.log(foo[0][1]) //2
+    setHairColor (HairColor) {
+        this.hair = HairColor;
+    }
+    //method1
+    greet (otherCharacter) {
+        console.log(`Hello ${otherCharacter}`);
+    }
+    //method2
+    smite () {
+        console.log('I smite thee you vile person!')
+    }
+}
 
-//Storing functions in an array
-console.log(foo[3]());
+const alexander = new Character();
+const brock = new Character();
+
+// alexander.greet("Brock");
+// brock.greet("Alexander")
+// alexander.smite()
+
+//name. age, eyes, hair, cats, dogs
+const azreal = new Character('azreal', '150', 'green', 'silver');
+
+azreal.setHairColor('red')
+console.log(azreal);
+
+
+
