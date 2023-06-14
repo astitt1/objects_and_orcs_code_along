@@ -83,47 +83,89 @@
 // //Storing functions in an array
 // console.log(foo[3]());
 
-
-
 //CREATING A CLASS
 
+// class Character {
+//     constructor (name, age, eyes, hair, lovesCats = true, lovesDogs) {
+//         this.legs = 2;
+//         this.arms = 2;
+//         this.name = name;
+//         this.age = age;
+//         this.eyes = eyes,
+//         this.hair = hair;
+//         this.lovesCats = lovesCats;
+//         this.lovesDogs = lovesDogs || true;
+//     }
+
+//     setHairColor (HairColor) {
+//         this.hair = HairColor;
+//     }
+//     //method1
+//     greet (otherCharacter) {
+//         console.log(`Hello ${otherCharacter}`);
+//     }
+//     //method2
+//     smite () {
+//         console.log('I smite thee you vile person!')
+//     }
+// }
+
+// const alexander = new Character();
+// const brock = new Character();
+
+// // alexander.greet("Brock");
+// // brock.greet("Alexander")
+// // alexander.smite()
+
+// //name. age, eyes, hair, cats, dogs
+// const azreal = new Character('azreal', '150', 'green', 'silver');
+
+// azreal.setHairColor('red')
+// console.log(azreal);
+
 class Character {
-    constructor (name, age, eyes, hair, lovesCats = true, lovesDogs) {
-        this.legs = 2;
-        this.arms = 2;
-        this.name = name;
-        this.age = age;
-        this.eyes = eyes,
-        this.hair = hair;
-        this.lovesCats = lovesCats;
-        this.lovesDogs = lovesDogs || true;
+  constructor(name, age, eyes, hair, lovesCats = true, lovesDogs) {
+    this.legs = 2;
+    this.arms = 2;
+    this.name = name;
+    this.age = age;
+    this.eyes = eyes;
+    this.hair = hair;
+    this.lovesCats = lovesCats;
+    this.lovesDogs = lovesDogs || true;
+  }
+  greet(otherCharacter) {
+    console.log("hi " + otherCharacter + "!");
+  }
+  classyGreeting(otherClassyCharacter) {
+    console.log("Howdy " + otherClassyCharacter.name + "!");
+  }
+  setHair(hairColor) {
+    this.hair = hairColor;
+  }
+  smite() {
+    console.log("i smited thee.");
+  }
+}
+const hobbit = new Character("Mr Baggins", 33, "brown", "black");
+// console.log(hobbit);
+
+class Hobbit extends Character {
+    constructor (name, age, eyes, hair) {
+        super(name, age, eyes, hair);
+        this.skils = ['thievery', 'speed', 'willpower']
+    }
+    steal () {
+        console.log('lets get away!')
     }
 
-    setHairColor (HairColor) {
-        this.hair = HairColor;
-    }
-    //method1
-    greet (otherCharacter) {
-        console.log(`Hello ${otherCharacter}`);
-    }
-    //method2
-    smite () {
-        console.log('I smite thee you vile person!')
+    smite() {
+        super.super();
+        this.steal();
     }
 }
 
-const alexander = new Character();
-const brock = new Character();
-
-// alexander.greet("Brock");
-// brock.greet("Alexander")
-// alexander.smite()
-
-//name. age, eyes, hair, cats, dogs
-const azreal = new Character('azreal', '150', 'green', 'silver');
-
-azreal.setHairColor('red')
-console.log(azreal);
-
-
-
+const frodo = new Hobbit('frodo', 30, 'blue', 'black')
+// console.log(frodo)
+frodo.classyGreeting(hobbit);
+frodo.smite()
